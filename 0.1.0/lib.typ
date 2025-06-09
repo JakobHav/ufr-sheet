@@ -22,23 +22,15 @@
   set page(
     width: 210mm,
     height: 297mm,
-    margin: (top: 20mm, bottom: 20mm, left: 14mm, right: 14mm),
+    margin: (top: 22mm, bottom: 20mm, left: 16mm, right: 16mm),
     numbering: "1",
   )
 
   let freiburggray = rgb(154, 154, 154)
 
-  block(width: 100%, below: -43pt)[
-    #align(left)[
-      #block()[
-        Jakob Haverkamp \
-        RZ: jh1444 \
-        Matrikel: 5932110 \
-      ]
-    ]
-
+  block(width: 100%, below: -43.5pt)[
     #align(center)[
-      #block(above: -40pt)[
+      #block(below: -60pt)[
         #strong[
           #text(14pt)[#subject]
         ] \
@@ -50,8 +42,17 @@
       ]
     ]
 
+    #align(left)[
+      #block()[
+        \
+        Jakob Haverkamp \
+        RZ: jh1444 \
+        Matrikel: 5932110 \
+      ]
+    ]
+
     #align(right)[
-      #block(above: -60pt)[
+      #block(above: -69pt)[
         #box(
           image(
             "./assets/logo.png",
@@ -62,7 +63,7 @@
     ]
   ]
 
-  rect(width: 84%, height: 3.1pt, fill: freiburggray)
+  rect(width: 84%, height: 3.9pt, fill: freiburggray)
 
   align(center)[
     #text(15pt)[

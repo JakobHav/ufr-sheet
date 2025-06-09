@@ -22,7 +22,7 @@
   set page(
     width: 210mm,
     height: 297mm,
-    margin: (top: 22mm, bottom: 20mm, left: 16mm, right: 16mm),
+    margin: (top: 23mm, bottom: 20mm, left: 18mm, right: 18mm),
     numbering: "1",
   )
 

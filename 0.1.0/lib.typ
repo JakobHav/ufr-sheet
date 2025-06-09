@@ -73,9 +73,7 @@
       let datelist = date.split(".")
       if datelist.len() == 3 {
         import "@preview/datify:0.1.4": month-name
-        let monatname = month-name(int(datelist.at(1)), "de") + ""
-        monatname = upper(monatname.at(0)) + monatname.slice(1, monatname.len())
-
+        let monatname = month-name(int(datelist.at(1)), "de", true)
 
         date = str(datelist.at(0)) + ". " + monatname + " " + datelist.at(2)
       }

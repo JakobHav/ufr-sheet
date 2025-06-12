@@ -66,20 +66,23 @@
   rect(width: 84%, height: 3.9pt, fill: freiburggray)
 
   align(center)[
-    #text(15pt)[
-      #strong()[#title]
-    ] \
-    #{
-      let datelist = date.split(".")
-      if datelist.len() == 3 {
-        import "@preview/datify:0.1.4": month-name
-        let monatname = month-name(int(datelist.at(1)), "de", true)
+    #block(above: 30pt, below: 10pt)[
+      #text(15pt)[
+        #strong()[#title]
+      ] \
+      #{
+        let datelist = date.split(".")
+        if datelist.len() == 3 {
+          import "@preview/datify:0.1.4": month-name
+          let monatname = month-name(int(datelist.at(1)), "de", true)
 
-        date = str(datelist.at(0)) + ". " + monatname + " " + datelist.at(2)
+          date = str(datelist.at(0)) + ". " + monatname + " " + datelist.at(2)
+        }
       }
-    }
-    #date
+      #date
+    ]
   ]
+  block()
   doc
 }
 

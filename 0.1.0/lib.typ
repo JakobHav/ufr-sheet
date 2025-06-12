@@ -66,7 +66,7 @@
   rect(width: 84%, height: 3.9pt, fill: freiburggray)
 
   align(center)[
-    #block(above: 30pt, below: 10pt)[
+    #block(above: 35pt, below: 5pt)[
       #text(15pt)[
         #strong()[#title]
       ] \

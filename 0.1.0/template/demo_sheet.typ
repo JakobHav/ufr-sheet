@@ -16,10 +16,11 @@
   prof: "Prof. Dr. Christoph Scholl",
   semester: "SS 2025",
   title: "Übungsblatt 07",
+  header: true,
 )
 
 
-= Aufgabe 1
+= Aufgadddbe 1
 === a)
 
 (Von unten nach oben gelesen)\

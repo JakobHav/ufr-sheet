@@ -13,6 +13,7 @@
   prof: "",
   subject: "",
   header: false,
+  numbering: "1",
   doc,
 ) = {
   set text(
@@ -24,9 +25,28 @@
     width: 210mm,
     height: 297mm,
     margin: (top: 23mm, bottom: 20mm, left: 18mm, right: 18mm),
-    numbering: "1",
+    numbering: {
+      if numbering.contains("1 von 1") {
+        "1 von 1"
+      } else if numbering == "none" { } else {
+        numbering.replace("rr", "").replace("ll", "")
+      }
+    },
+    number-align: {
+      if numbering.contains("rr") {
+        right
+      } else if numbering.contains("ll") {
+        left
+      } else {
+        center
+      }
+    },
+
     header: context {
       if header and counter(page).get().first() > 1 [
+        #align(center)[
+          #block(height: 0pt, above: 5pt, below: -10pt)[#title]
+        ]
         #block(below: 7pt)[
           Jakob Haverkamp#h(1fr)#subject
         ]

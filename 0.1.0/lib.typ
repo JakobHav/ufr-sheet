@@ -12,6 +12,7 @@
   semester: "",
   prof: "",
   subject: "",
+  header: false,
   doc,
 ) = {
   set text(
@@ -24,6 +25,14 @@
     height: 297mm,
     margin: (top: 23mm, bottom: 20mm, left: 18mm, right: 18mm),
     numbering: "1",
+    header: context {
+      if header and counter(page).get().first() > 1 [
+        #block(below: 7pt)[
+          Jakob Haverkamp#h(1fr)#subject
+        ]
+        #line(stroke: 0.25pt, length: 100%)
+      ]
+    },
   )
 
   let freiburggray = rgb(154, 154, 154)
@@ -32,13 +41,13 @@
     #align(center)[
       #block(below: -60pt)[
         #strong[
-          #text(14pt)[#subject]
+          #text(14pt)[
+            #subject \
+            #semester
+          ]
         ] \
-        #strong[#semester]
-
-        #text()[
-          #prof
-        ] \
+        #prof
+        \
       ]
     ]
 
@@ -66,7 +75,7 @@
   rect(width: 84%, height: 3.9pt, fill: freiburggray)
 
   align(center)[
-    #block(above: 35pt, below: 5pt)[
+    #block(above: 40pt, below: 5pt)[
       #text(15pt)[
         #strong()[#title]
       ] \

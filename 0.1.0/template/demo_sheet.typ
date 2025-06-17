@@ -20,7 +20,7 @@
 )
 
 
-= Aufgadddbe 1
+= Aufgabe 1
 === a)
 
 (Von unten nach oben gelesen)\

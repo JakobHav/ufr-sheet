@@ -26,9 +26,7 @@
     height: 297mm,
     margin: (top: 23mm, bottom: 20mm, left: 18mm, right: 18mm),
     numbering: {
-      if numbering.contains("1 von 1") {
-        "1 von 1"
-      } else if numbering == "none" { } else {
+      if numbering != "none" {
         numbering.replace("rr", "").replace("ll", "")
       }
     },

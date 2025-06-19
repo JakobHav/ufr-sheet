@@ -7,19 +7,49 @@
 */
 
 #let conf(
+  /*
+  Date: Datum
+  */
   date: "",
   title: "",
   semester: "",
   prof: "",
   subject: "",
-  header: false,
+  header: "1",
   numbering: "1",
+  name: "Jakob Haverkamp",
+  mat: "5932110",
+  rz: "jh1444",
   doc,
 ) = {
   set text(
     lang: "de",
     size: 13pt,
   )
+
+  let l = ""
+  let c = ""
+  let r = ""
+
+  if header == "1" or header == true {
+    l = name
+    c = subject
+    r = title
+  } else if header == "2" {
+    l = name
+    c = title
+    r = subject
+  } else if header == "3" {
+    l = name
+    c = ""
+    r = title
+  } else if header == "4" {
+    l = name
+    c = ""
+    r = subject
+  } else {
+    header = false
+  }
 
   set page(
     width: 210mm,
@@ -41,15 +71,17 @@
     },
 
     header: context {
-      if header and counter(page).get().first() > 1 [
-        #align(center)[
-          #block(height: 0pt, above: 5pt, below: -10pt)[#title]
+      if header != false and counter(page).get().first() > 1 {
+        [
+          #align(center)[
+            #block(height: 0pt, above: 5pt, below: -10pt)[#c]
+          ]
+          #block(below: 7pt)[
+            #l#h(1fr)#r
+          ]
+          #line(stroke: 0.25pt, length: 100%)
         ]
-        #block(below: 7pt)[
-          Jakob Haverkamp#h(1fr)#subject
-        ]
-        #line(stroke: 0.25pt, length: 100%)
-      ]
+      }
     },
   )
 
@@ -72,9 +104,9 @@
     #align(left)[
       #block()[
         \
-        Jakob Haverkamp \
-        RZ: jh1444 \
-        Matrikel: 5932110 \
+        #name \
+        RZ: #rz \
+        Matrikel: #mat \
       ]
     ]
 

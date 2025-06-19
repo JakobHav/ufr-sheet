@@ -16,7 +16,7 @@
   prof: "Prof. Dr. Christoph Scholl",
   semester: "SS 2025",
   title: "Übungsblatt 07",
-  header: true,
+  header: "1",
 )
 
 

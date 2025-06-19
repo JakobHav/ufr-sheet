@@ -20,6 +20,7 @@
   name: "Jakob Haverkamp",
   mat: "5932110",
   rz: "jh1444",
+  header_start: 1,
   doc,
 ) = {
   set text(
@@ -56,7 +57,7 @@
     height: 297mm,
     margin: (top: 23mm, bottom: 20mm, left: 18mm, right: 18mm),
     numbering: {
-      if numbering != "none" {
+      if numbering != "0" and numbering != "none" and numbering != false {
         numbering.replace("rr", "").replace("ll", "")
       }
     },
@@ -71,7 +72,7 @@
     },
 
     header: context {
-      if header != false and counter(page).get().first() > 1 {
+      if header != false and counter(page).get().first() > header_start {
         [
           #align(center)[
             #block(height: 0pt, above: 5pt, below: -10pt)[#c]

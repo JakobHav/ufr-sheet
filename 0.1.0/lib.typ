@@ -72,7 +72,6 @@
     },
 
     header: context {
-      set text(size: 14pt)
       if header != false and counter(page).get().first() > header_start {
         [
           #align(center)[
@@ -114,10 +113,12 @@
 
     #align(right)[
       #block(above: -69pt)[
-        #box(image(
-          "./assets/logo.png",
-          height: 127pt,
-        ))
+        #box(
+          image(
+            "./assets/logo.png",
+            height: 127pt,
+          ),
+        )
       ]
     ]
   ]
